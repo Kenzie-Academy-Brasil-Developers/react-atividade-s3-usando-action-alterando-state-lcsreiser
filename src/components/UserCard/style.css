@@ -1,0 +1,6 @@
+.divName {
+  display: flex;
+  flex-direction: row;
+  max-width: 35vh;
+  flex-wrap: wrap;
+}
