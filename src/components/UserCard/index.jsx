@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeName } from "../../store/modules/user/action";
 import "./style.css";
 
@@ -12,9 +12,11 @@ const UserCard = () => {
     dispatch(changeName(newName));
   };
 
+  const { name } = useSelector((state) => state.user);
+
   return (
     <div className="divName">
-      <h2>User name: {newName}</h2>
+      <h2>User name: {name}</h2>
       <input type="text" onChange={(event) => setNewName(event.target.value)} />
       <button onClick={handleClick}>Change</button>
     </div>
